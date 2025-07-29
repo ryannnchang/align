@@ -22,9 +22,9 @@ def align(sent=0.1):
   y_align = None
   z_align = None
 
-  while x_align != True and y_align != True and z_align != True:
+  while x_align != True or y_align != True or z_align != True:
     ax, ay, az = read_acc()
-    time.sleep(0.2)
+    time.sleep(1)
 
     if x_avg - sent < ax < x_avg + sent:
       x_align = True
@@ -44,3 +44,4 @@ def align(sent=0.1):
   
   print("Alignment complete")
 
+align()
